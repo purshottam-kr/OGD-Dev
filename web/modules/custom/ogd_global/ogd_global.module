@@ -1,0 +1,55 @@
+<?php
+
+/**
+ * @file
+ * Hook implementations of the OGD Global module.
+ */
+
+use Drupal\Core\Form\FormStateInterface;
+
+/**
+ * Implements hook_form_FORM_ID_alter() for user_form.
+ */
+function ogd_global_form_book_admin_edit_alter(&$form, &$form_state) {
+
+  $form['#submit'][] = 'submit_form_custom';
+}
+
+/**
+ * Custom form submit handler.
+ */
+function submit_form_custom(&$form, FormStateInterface &$form_state) {
+
+  $nids = \Drupal::entityQuery('node')
+  ->condition('status', 1)
+  ->condition('type', 'sub_chapters')
+  ->accessCheck()
+  ->execute();
+
+$nodes = \Drupal\node\Entity\Node::loadMultiple($nids);
+$book_chapter = [];
+// Get only parent Chapters
+foreach ($nodes as $key => $node) {
+  $book_chapter_pid[] = $node->book['pid'];
+}
+  $book_chapter_pid = $unique_data = array_unique($book_chapter_pid);
+  foreach ($book_chapter_pid as $key => $pid) {
+    
+    $book_outline_storage = \Drupal::service('book.outline_storage');
+    $childrens  =  $book_outline_storage->loadBookChildren($pid);
+    $nidweight = [];
+    foreach ($childrens as $keyed=> $rowed) {
+      $nidweight[$keyed] = $rowed['weight'];
+    }
+    // Sort chapters
+    array_multisort($nidweight, SORT_ASC, $childrens);
+
+    foreach ($childrens as $keyeed => $roweed) {
+        $chapter_node = \Drupal\node\Entity\Node::load($roweed['nid']);
+      if($chapter_node->bundle() == 'sub_chapters'){
+        $chapter_node->set('field_chapter_number', $keyeed + 1);
+        $chapter_node->save();
+      }
+    }
+  }
+}

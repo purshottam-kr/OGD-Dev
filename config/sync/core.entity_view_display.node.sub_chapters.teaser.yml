@@ -1,0 +1,34 @@
+uuid: c44bd54e-d685-4abb-b4ea-4456ba047d7f
+langcode: en
+status: true
+dependencies:
+  config:
+    - core.entity_view_mode.node.teaser
+    - field.field.node.sub_chapters.body
+    - field.field.node.sub_chapters.field_chapter_number
+    - field.field.node.sub_chapters.field_comments
+    - node.type.sub_chapters
+  module:
+    - text
+    - user
+id: node.sub_chapters.teaser
+targetEntityType: node
+bundle: sub_chapters
+mode: teaser
+content:
+  body:
+    type: text_summary_or_trimmed
+    label: hidden
+    settings:
+      trim_length: 600
+    third_party_settings: {  }
+    weight: 101
+    region: content
+  links:
+    settings: {  }
+    third_party_settings: {  }
+    weight: 100
+    region: content
+hidden:
+  field_chapter_number: true
+  field_comments: true

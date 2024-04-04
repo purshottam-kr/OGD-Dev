@@ -1,0 +1,14 @@
+uuid: e464fa99-a9dc-4f84-ac0e-795c85e69b84
+langcode: en
+status: true
+dependencies: {  }
+_core:
+  default_config_hash: vymHlgJy26BuI5GGj9-IXjwR3dRC5C0tij4BpWJnoqw
+id: feedback
+label: 'Website feedback'
+recipients:
+  - purshottam.kumar@capgemini.com
+reply: ''
+weight: 0
+message: 'Your message has been sent.'
+redirect: ''

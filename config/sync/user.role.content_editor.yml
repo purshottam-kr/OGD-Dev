@@ -1,0 +1,48 @@
+uuid: 47941d23-c39e-46ba-a4b0-9ce31e25044a
+langcode: en
+status: true
+dependencies:
+  config:
+    - node.type.sub_chapters
+    - taxonomy.vocabulary.tags
+    - workflows.workflow.editorial
+  module:
+    - comment
+    - content_moderation
+    - contextual
+    - file
+    - node
+    - path
+    - system
+    - taxonomy
+    - toolbar
+_core:
+  default_config_hash: e_wG1u7SrGaJbY2-Szgbgl-c8T3kdirU3uTNq2c_QJQ
+id: content_editor
+label: Author
+weight: -6
+is_admin: false
+permissions:
+  - 'access administration pages'
+  - 'access content overview'
+  - 'access contextual links'
+  - 'access files overview'
+  - 'access toolbar'
+  - 'administer url aliases'
+  - 'create sub_chapters content'
+  - 'create terms in tags'
+  - 'create url aliases'
+  - 'delete own files'
+  - 'edit any sub_chapters content'
+  - 'edit own comments'
+  - 'edit terms in tags'
+  - 'revert all revisions'
+  - 'use editorial transition create_new_draft'
+  - 'use editorial transition needs_work'
+  - 'use editorial transition ready_for_review'
+  - 'view all revisions'
+  - 'view any unpublished content'
+  - 'view latest version'
+  - 'view own unpublished content'
+  - 'view sub_chapters revisions'
+  - 'view the administration theme'

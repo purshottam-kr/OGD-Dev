@@ -1,0 +1,35 @@
+uuid: 1d9de414-4153-4fdf-b1ff-afa13ae75de5
+langcode: en
+status: true
+dependencies:
+  config:
+    - node.type.sub_chapters
+    - workflows.workflow.editorial
+  module:
+    - content_moderation
+    - file
+    - node
+    - system
+    - toolbar
+id: publisher
+label: Publisher
+weight: -4
+is_admin: null
+permissions:
+  - 'access content overview'
+  - 'access files overview'
+  - 'access toolbar'
+  - 'create sub_chapters content'
+  - 'edit any sub_chapters content'
+  - 'use editorial transition approve'
+  - 'use editorial transition archive'
+  - 'use editorial transition archived_draft'
+  - 'use editorial transition archived_published'
+  - 'use editorial transition create_new_draft'
+  - 'use editorial transition needs_work'
+  - 'use editorial transition publish'
+  - 'use editorial transition ready_for_review'
+  - 'view any unpublished content'
+  - 'view latest version'
+  - 'view sub_chapters revisions'
+  - 'view the administration theme'

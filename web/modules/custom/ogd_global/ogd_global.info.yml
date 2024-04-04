@@ -1,0 +1,8 @@
+name: OGD Global
+type: module
+description: For general hooks.
+core_version_requirement: ^9.3 || ^10
+package: Custom
+configure: entity.openid_connect_client.list
+version: '1.0'
+

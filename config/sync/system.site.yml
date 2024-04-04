@@ -1,0 +1,15 @@
+_core:
+  default_config_hash: VDJxTZtQR21qB4lvOq8zszJZLvLKrSPQpdn2E3T71Ww
+langcode: en
+uuid: 1911c5a5-31ea-4ede-8338-02813a31585f
+name: 'ÖGD manual'
+mail: purshottam.kumar@capgemini.com
+slogan: ''
+page:
+  403: ''
+  404: ''
+  front: /chapter-list
+admin_compact_mode: false
+weight_select_max: 100
+default_langcode: en
+mail_notification: ''

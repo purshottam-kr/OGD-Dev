@@ -1,0 +1,19 @@
+uuid: b87ab568-3f95-48b5-9837-1e5c7839e30a
+langcode: en
+status: true
+dependencies: {  }
+id: azure
+label: Azure
+plugin: generic
+settings:
+  client_id: 
+  client_secret: 
+  iss_allowed_domains: ''
+  issuer_url: ''
+  authorization_endpoint: ''
+  token_endpoint: ''
+  userinfo_endpoint: ''
+  end_session_endpoint: ''
+  scopes:
+    - openid
+    - email
